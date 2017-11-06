@@ -25,7 +25,7 @@
 </div>
 
 </body>
-<script src="apache-log-to-http-param.js"></script>
+<script src="index.js"></script>
 <script>
   document.getElementById('parser').addEventListener('click', () => {
     const data = document.getElementById('origin').value.split('\n');
@@ -34,7 +34,7 @@
         document.getElementById('origin').focus();
         return;
     }
-    document.getElementById('result').value = myBatisLogParser(data[0], data[1]);
+    document.getElementById('result').value = run(data[0], data[1]);
   });
 </script>
 
