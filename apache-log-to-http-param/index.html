@@ -1,0 +1,40 @@
+<!DOCTYPE>
+<html>
+
+<head>
+  <link href="mail.css" />
+</head>
+<div class="container">
+
+  <body>
+    <a href="https://github.com/wicksome/wicksome-utils"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
+    <div id="contact">
+      <h3><b>Apache log to http params</b></h3>
+      <h4>Parsing apache log and create http param string</h4>
+      <!-- <input type="radio" id="contactChoice1" name="contact" value="email" checked> -->
+      <!-- <label for="contactChoice1">Email</label> -->
+      <!-- <input type="radio" id="contactChoice2" name="contact" value="phone"> -->
+      <!-- <label for="contactChoice2">Phone</label> -->
+      <textarea id="origin" placeholder="Please enter data" tabindex="5"></textarea>
+      <textarea id="result" placeholder="Result" tabindex="5" onfocus="this.select();" onmouseup="return false;"></textarea>
+      <button name="pasing" type="button" id="parser" data-submit="...Sending">Parse</button>
+      <p class="copyright">Written by <a href="https://wickso.me" target="_blank" title="wicksome">wicksome</a>, Designed by <a href="https://colorlib.com"
+          target="_blank" title="Colorlib">Colorlib</a></p>
+    </div>
+</div>
+
+</body>
+<script src="apache-log-to-http-param.js"></script>
+<script>
+  document.getElementById('parser').addEventListener('click', () => {
+    const data = document.getElementById('origin').value.split('\n');
+    if(!data || data.length === 0 || data[0].length === 0) {
+        alert('Empty original log');
+        document.getElementById('origin').focus();
+        return;
+    }
+    document.getElementById('result').value = myBatisLogParser(data[0], data[1]);
+  });
+</script>
+
+</html>
